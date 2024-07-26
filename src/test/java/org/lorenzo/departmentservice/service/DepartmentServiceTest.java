@@ -17,31 +17,53 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.lorenzo.departmentservice.model.Department;
+import org.lorenzo.departmentservice.repository.DepartmentRepository;
+import org.lorenzo.departmentservice.exception.ResourceNotFoundException;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+
 @ExtendWith(MockitoExtension.class)
 class DepartmentServiceTest {
 
     @Mock
     private DepartmentRepository departmentRepository;
 
-    @Mock
-    private RestTemplate restTemplate;
-
     private DepartmentService departmentService;
 
     @BeforeEach
     void setUp() {
-        departmentService = new DepartmentService(restTemplate, departmentRepository);
+        departmentService = new DepartmentService(departmentRepository);
     }
 
     @Test
     void getDepartmentById() {
         UUID id = UUID.randomUUID();
         Department expected = new Department(id, "Test Department");
-        when(restTemplate.getForObject(anyString(), eq(Department.class))).thenReturn(expected);
+        when(departmentRepository.findById(id)).thenReturn(Optional.of(expected));
 
         Department result = departmentService.getDepartmentById(id);
 
         assertEquals(expected, result);
+    }
+
+    @Test
+    void getDepartmentById_NotFound() {
+        UUID id = UUID.randomUUID();
+        when(departmentRepository.findById(id)).thenReturn(Optional.empty());
+
+        assertThrows(ResourceNotFoundException.class, () -> departmentService.getDepartmentById(id));
     }
 
     @Test
@@ -60,7 +82,9 @@ class DepartmentServiceTest {
         Department department = new Department(UUID.randomUUID(), "Existing Department");
         when(departmentRepository.findByName(department.getName())).thenReturn(Optional.of(department));
 
-        assertThrows(RuntimeException.class, () -> departmentService.createDepartment(department));
+        Department result = departmentService.createDepartment(department);
+
+        assertNull(result);
     }
 
     @Test
@@ -80,10 +104,12 @@ class DepartmentServiceTest {
         UUID id = UUID.randomUUID();
         Department department = new Department(id, "Old Name");
         when(departmentRepository.findById(id)).thenReturn(Optional.of(department));
+        when(departmentRepository.findByName("New Name")).thenReturn(Optional.empty());
         when(departmentRepository.save(any(Department.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
         Department result = departmentService.updateDepartment(id, "New Name");
 
+        assertNotNull(result);
         assertEquals("New Name", result.getName());
     }
 
@@ -92,7 +118,19 @@ class DepartmentServiceTest {
         UUID id = UUID.randomUUID();
         when(departmentRepository.findById(id)).thenReturn(Optional.empty());
 
-        assertThrows(RuntimeException.class, () -> departmentService.updateDepartment(id, "New Name"));
+        assertThrows(ResourceNotFoundException.class, () -> departmentService.updateDepartment(id, "New Name"));
+    }
+
+    @Test
+    void updateDepartment_NameAlreadyExists() {
+        UUID id = UUID.randomUUID();
+        Department department = new Department(id, "Old Name");
+        when(departmentRepository.findById(id)).thenReturn(Optional.of(department));
+        when(departmentRepository.findByName("New Name")).thenReturn(Optional.of(new Department()));
+
+        Department result = departmentService.updateDepartment(id, "New Name");
+
+        assertNull(result);
     }
 
     @Test
@@ -111,11 +149,29 @@ class DepartmentServiceTest {
     @Test
     void deleteDepartment() {
         UUID id = UUID.randomUUID();
+        when(departmentRepository.existsById(id)).thenReturn(true);
+
         departmentService.deleteDepartment(id);
+
         verify(departmentRepository).deleteById(id);
     }
 
+    @Test
+    void deleteDepartment_NotFound() {
+        UUID id = UUID.randomUUID();
+        when(departmentRepository.existsById(id)).thenReturn(false);
 
+        assertThrows(ResourceNotFoundException.class, () -> departmentService.deleteDepartment(id));
+    }
 
+    @Test
+    void existDepartmentById() {
+        UUID id = UUID.randomUUID();
+        when(departmentRepository.existsById(id)).thenReturn(true);
 
+        boolean result = departmentService.existDepartmentById(id);
+
+        assertTrue(result);
+    }
 }
+

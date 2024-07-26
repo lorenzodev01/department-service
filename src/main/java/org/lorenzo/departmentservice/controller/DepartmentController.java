@@ -16,11 +16,21 @@ public class DepartmentController {
     @Autowired
     private DepartmentService departmentService;
 
+
+    /**
+     * Recupera tutti i dipartimenti.
+     * @return ResponseEntity contenente la lista di tutti i Dipartimenti
+     */
     @GetMapping
     public ResponseEntity<List<Department>> getAllDepartments() {
         return ResponseEntity.ok(departmentService.getAllDepartments());
     }
 
+    /**
+     * Recupera un dipartimento tramite il suo ID.
+     * @param id L'UUID del dipartimento
+     * @return ResponseEntity contenente il Dipartimento, o 404 se non trovato
+     */
     @GetMapping("/{id}")
     public ResponseEntity<Department> getDepartment(@PathVariable UUID id) {
         return departmentService.getDepartment(id)
@@ -28,6 +38,11 @@ public class DepartmentController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    /**
+     * Crea un nuovo dipartimento.
+     * @param department L'oggetto Dipartimento da creare
+     * @return ResponseEntity contenente il Dipartimento creato
+     */
     @PostMapping
     public ResponseEntity<Department> createDepartment(@RequestBody Department department) {
         Department createdDepartment = departmentService.createDepartment(department);
@@ -46,6 +61,11 @@ public class DepartmentController {
         return ResponseEntity.noContent().build();
     }
 
+    /**
+     * Verifica se un dipartimento esiste tramite il suo ID.
+     * @param id L'UUID del dipartimento
+     * @return ResponseEntity contenente true se il dipartimento esiste, false altrimenti
+     */
     @GetMapping("/{id}/exists")
     public ResponseEntity<Boolean> existsDepartmentById(@PathVariable UUID id) {
         boolean exists = departmentService.existDepartmentById(id);

@@ -51,14 +51,14 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                 authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             } else {
-                // Token non valido, imposta una risposta di non autorizzato
+                // Invalid token, set a response of unauthorized
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-                return;  // Importante: non procedere con la catena dei filtri
+                return;  // Important: Do not proceed with the filter chain
             }
         } catch (Exception e) {
             logger.error("Cannot set user authentication: {}", e);
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            return;  // Importante: non procedere con la catena dei filtri
+            return;  // Important: Do not proceed with the filter chain
         }
 
         filterChain.doFilter(request, response);

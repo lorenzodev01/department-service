@@ -17,9 +17,6 @@ public class Employee {
     private String email;
 
 
-//    @JoinColumn(name = "department_id")
-//    private Department department;
-
     // Default constructor
     public Employee() {
     }
@@ -30,13 +27,5 @@ public class Employee {
         this.lastName = lastName;
         this.email = email;
     }
-
-//    public Department getDepartment() {
-//        return department;
-//    }
-//
-//    public void setDepartment(Department department) {
-//        this.department = department;
-//    }
 
 }
