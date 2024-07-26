@@ -1,0 +1,537 @@
+2024-07-26 11:29:02 - HV000001: Hibernate Validator 8.0.1.Final
+2024-07-26 11:29:02 - Starting DepartmentServiceApplication using Java 18.0.2.1 with PID 2168 (C:\Users\l.ciaravola\Desktop\department-service\target\classes started by l.ciaravola in C:\Users\l.ciaravola\Desktop\department-service)
+2024-07-26 11:29:02 - No active profile set, falling back to 1 default profile: "default"
+2024-07-26 11:29:03 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-26 11:29:03 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-26 11:29:05 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-26 11:29:05 - Finished Spring Data repository scanning in 109 ms. Found 1 JPA repository interface.
+2024-07-26 11:29:06 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-26 11:29:06 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-07-26 11:29:07 - Tomcat initialized with port 8080 (http)
+2024-07-26 11:29:07 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-26 11:29:07 - Starting service [Tomcat]
+2024-07-26 11:29:07 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-26 11:29:07 - Initializing Spring embedded WebApplicationContext
+2024-07-26 11:29:07 - Root WebApplicationContext: initialization completed in 4870 ms
+2024-07-26 11:29:08 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-26 11:29:08 - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-26 11:29:08 - HHH000026: Second-level cache disabled
+2024-07-26 11:29:09 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-26 11:29:09 - HikariPool-1 - Starting...
+2024-07-26 11:29:20 - HHH000342: Could not obtain connection to query metadata
+java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:290)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:123)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:77)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:221)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:189)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at org.lorenzo.departmentservice.DepartmentServiceApplication.main(DepartmentServiceApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+2024-07-26 11:29:20 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-26 11:29:22 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-26 11:29:22 - HikariPool-1 - Starting...
+2024-07-26 11:29:33 - SQL Error: 0, SQLState: 08001
+2024-07-26 11:29:33 - Il tentativo di connessione è fallito.
+2024-07-26 11:29:33 - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Il tentativo di connessione è fallito.] [n/a]
+2024-07-26 11:29:33 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Il tentativo di connessione è fallito.] [n/a]
+2024-07-26 11:29:33 - Stopping service [Tomcat]
+2024-07-26 11:29:33 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-07-26 11:29:33 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Il tentativo di connessione è fallito.] [n/a]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at org.lorenzo.departmentservice.DepartmentServiceApplication.main(DepartmentServiceApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Il tentativo di connessione è fallito.] [n/a]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	... 18 common frames omitted
+Caused by: org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Il tentativo di connessione è fallito.] [n/a]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:100)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:74)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:39)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:63)
+	at org.hibernate.tool.schema.extract.spi.ExtractionContext.getQueryResults(ExtractionContext.java:43)
+	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorLegacyImpl.extractMetadata(SequenceInformationExtractorLegacyImpl.java:39)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.initializeSequences(DatabaseInformationImpl.java:66)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.<init>(DatabaseInformationImpl.java:60)
+	at org.hibernate.tool.schema.internal.Helper.buildDatabaseInformation(Helper.java:185)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:98)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:322)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:457)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1506)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 22 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Il tentativo di connessione è fallito.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:358)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:437)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46)
+	... 42 common frames omitted
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:543)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:136)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:262)
+	... 56 common frames omitted
+2024-07-26 11:47:29 - HV000001: Hibernate Validator 8.0.1.Final
+2024-07-26 11:47:29 - Starting DepartmentServiceApplication using Java 18.0.2.1 with PID 10664 (C:\Users\l.ciaravola\Desktop\department-service\target\classes started by l.ciaravola in C:\Users\l.ciaravola\Desktop\department-service)
+2024-07-26 11:47:29 - No active profile set, falling back to 1 default profile: "default"
+2024-07-26 11:47:30 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-26 11:47:30 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-26 11:47:32 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-26 11:47:32 - Finished Spring Data repository scanning in 118 ms. Found 1 JPA repository interface.
+2024-07-26 11:47:33 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-26 11:47:33 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-07-26 11:47:34 - Tomcat initialized with port 8080 (http)
+2024-07-26 11:47:34 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-07-26 11:47:34 - Starting service [Tomcat]
+2024-07-26 11:47:34 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-26 11:47:34 - Initializing Spring embedded WebApplicationContext
+2024-07-26 11:47:34 - Root WebApplicationContext: initialization completed in 4325 ms
+2024-07-26 11:47:35 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-26 11:47:35 - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-26 11:47:35 - HHH000026: Second-level cache disabled
+2024-07-26 11:47:35 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-26 11:47:35 - HikariPool-1 - Starting...
+2024-07-26 11:47:36 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@21443981
+2024-07-26 11:47:36 - HikariPool-1 - Start completed.
+2024-07-26 11:47:36 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-26 11:47:38 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-26 11:47:38 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26 11:47:39 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-26 11:47:40 - LiveReload server is running on port 35729
+2024-07-26 11:47:40 - Starting ProtocolHandler ["http-nio-8080"]
+2024-07-26 11:47:40 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-07-26 11:47:40 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26 11:47:40 - HikariPool-1 - Shutdown initiated...
+2024-07-26 11:47:40 - HikariPool-1 - Shutdown completed.
+2024-07-26 11:47:40 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-07-26 11:47:40 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2024-07-26 11:48:19 - HV000001: Hibernate Validator 8.0.1.Final
+2024-07-26 11:48:19 - Starting DepartmentServiceApplication using Java 18.0.2.1 with PID 8152 (C:\Users\l.ciaravola\Desktop\department-service\target\classes started by l.ciaravola in C:\Users\l.ciaravola\Desktop\department-service)
+2024-07-26 11:48:19 - No active profile set, falling back to 1 default profile: "default"
+2024-07-26 11:48:19 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-26 11:48:19 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-26 11:48:21 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-26 11:48:21 - Finished Spring Data repository scanning in 105 ms. Found 1 JPA repository interface.
+2024-07-26 11:48:22 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-26 11:48:22 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-07-26 11:48:23 - Tomcat initialized with port 8082 (http)
+2024-07-26 11:48:23 - Initializing ProtocolHandler ["http-nio-8082"]
+2024-07-26 11:48:23 - Starting service [Tomcat]
+2024-07-26 11:48:23 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-26 11:48:23 - Initializing Spring embedded WebApplicationContext
+2024-07-26 11:48:23 - Root WebApplicationContext: initialization completed in 4214 ms
+2024-07-26 11:48:24 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-26 11:48:24 - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-26 11:48:24 - HHH000026: Second-level cache disabled
+2024-07-26 11:48:25 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-26 11:48:25 - HikariPool-1 - Starting...
+2024-07-26 11:48:25 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e3fccfa
+2024-07-26 11:48:25 - HikariPool-1 - Start completed.
+2024-07-26 11:48:25 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-26 11:48:27 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-26 11:48:27 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26 11:48:28 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-26 11:48:29 - LiveReload server is running on port 35729
+2024-07-26 11:48:29 - Starting ProtocolHandler ["http-nio-8082"]
+2024-07-26 11:48:29 - Tomcat started on port 8082 (http) with context path '/'
+2024-07-26 11:48:29 - Started DepartmentServiceApplication in 11.988 seconds (process running for 13.166)
+2024-07-26 11:50:16 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-26 11:50:16 - Initializing Servlet 'dispatcherServlet'
+2024-07-26 11:50:16 - Completed initialization in 3 ms
+2024-07-26 12:01:54 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26 12:01:54 - HikariPool-1 - Shutdown initiated...
+2024-07-26 12:01:54 - HikariPool-1 - Shutdown completed.
+2024-07-26 12:02:34 - HV000001: Hibernate Validator 8.0.1.Final
+2024-07-26 12:02:34 - Starting DepartmentServiceApplication using Java 18.0.2.1 with PID 9456 (C:\Users\l.ciaravola\Desktop\department-service\target\classes started by l.ciaravola in C:\Users\l.ciaravola\Desktop\department-service)
+2024-07-26 12:02:34 - No active profile set, falling back to 1 default profile: "default"
+2024-07-26 12:02:34 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-26 12:02:34 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-26 12:02:36 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-26 12:02:36 - Finished Spring Data repository scanning in 110 ms. Found 1 JPA repository interface.
+2024-07-26 12:02:37 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-26 12:02:37 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-07-26 12:02:38 - Tomcat initialized with port 8082 (http)
+2024-07-26 12:02:38 - Initializing ProtocolHandler ["http-nio-8082"]
+2024-07-26 12:02:38 - Starting service [Tomcat]
+2024-07-26 12:02:38 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-26 12:02:38 - Initializing Spring embedded WebApplicationContext
+2024-07-26 12:02:38 - Root WebApplicationContext: initialization completed in 3886 ms
+2024-07-26 12:02:38 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-26 12:02:39 - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-26 12:02:39 - HHH000026: Second-level cache disabled
+2024-07-26 12:02:40 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-26 12:02:40 - HikariPool-1 - Starting...
+2024-07-26 12:02:40 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4b6829e3
+2024-07-26 12:02:40 - HikariPool-1 - Start completed.
+2024-07-26 12:02:40 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-26 12:02:42 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-26 12:02:42 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26 12:02:43 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-26 12:02:44 - LiveReload server is running on port 35729
+2024-07-26 12:02:44 - Starting ProtocolHandler ["http-nio-8082"]
+2024-07-26 12:02:44 - Tomcat started on port 8082 (http) with context path '/'
+2024-07-26 12:02:44 - Started DepartmentServiceApplication in 11.914 seconds (process running for 13.211)
+2024-07-26 12:07:13 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26 12:07:13 - HikariPool-1 - Shutdown initiated...
+2024-07-26 12:07:13 - HikariPool-1 - Shutdown completed.
+2024-07-26 12:07:21 - HV000001: Hibernate Validator 8.0.1.Final
+2024-07-26 12:07:21 - Starting DepartmentServiceApplication using Java 18.0.2.1 with PID 9904 (C:\Users\l.ciaravola\Desktop\department-service\target\classes started by l.ciaravola in C:\Users\l.ciaravola\Desktop\department-service)
+2024-07-26 12:07:21 - No active profile set, falling back to 1 default profile: "default"
+2024-07-26 12:07:21 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-26 12:07:21 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-26 12:07:23 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-26 12:07:24 - Finished Spring Data repository scanning in 117 ms. Found 1 JPA repository interface.
+2024-07-26 12:07:24 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-26 12:07:24 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-07-26 12:07:25 - Tomcat initialized with port 8082 (http)
+2024-07-26 12:07:25 - Initializing ProtocolHandler ["http-nio-8082"]
+2024-07-26 12:07:25 - Starting service [Tomcat]
+2024-07-26 12:07:25 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-26 12:07:25 - Initializing Spring embedded WebApplicationContext
+2024-07-26 12:07:25 - Root WebApplicationContext: initialization completed in 4316 ms
+2024-07-26 12:07:26 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-26 12:07:26 - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-26 12:07:26 - HHH000026: Second-level cache disabled
+2024-07-26 12:07:27 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-26 12:07:27 - HikariPool-1 - Starting...
+2024-07-26 12:07:28 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@37712d3e
+2024-07-26 12:07:28 - HikariPool-1 - Start completed.
+2024-07-26 12:07:28 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-26 12:07:30 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-26 12:07:30 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26 12:07:30 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-26 12:07:32 - LiveReload server is running on port 35729
+2024-07-26 12:07:32 - Starting ProtocolHandler ["http-nio-8082"]
+2024-07-26 12:07:32 - Tomcat started on port 8082 (http) with context path '/'
+2024-07-26 12:07:32 - Started DepartmentServiceApplication in 12.359 seconds (process running for 13.554)
+2024-07-26 12:09:44 - Restarting due to 23 class path changes (0 additions, 22 deletions, 1 modification)
+2024-07-26 12:09:44 - Stopping ProtocolHandler ["http-nio-8082"]
+2024-07-26 12:09:45 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26 12:09:45 - HikariPool-1 - Shutdown initiated...
+2024-07-26 12:09:45 - HikariPool-1 - Shutdown completed.
+2024-07-26 12:09:45 - Starting DepartmentServiceApplication using Java 18.0.2.1 with PID 9904 (C:\Users\l.ciaravola\Desktop\department-service\target\classes started by l.ciaravola in C:\Users\l.ciaravola\Desktop\department-service)
+2024-07-26 12:09:45 - No active profile set, falling back to 1 default profile: "default"
+2024-07-26 12:09:46 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-26 12:09:46 - Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2024-07-26 12:09:46 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-26 12:09:46 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-07-26 12:09:46 - Tomcat initialized with port 8082 (http)
+2024-07-26 12:09:46 - Initializing ProtocolHandler ["http-nio-8082"]
+2024-07-26 12:09:46 - Starting service [Tomcat]
+2024-07-26 12:09:46 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-26 12:09:46 - Initializing Spring embedded WebApplicationContext
+2024-07-26 12:09:46 - Root WebApplicationContext: initialization completed in 1186 ms
+2024-07-26 12:09:46 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-26 12:09:46 - HHH000026: Second-level cache disabled
+2024-07-26 12:09:46 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-26 12:09:46 - HikariPool-2 - Starting...
+2024-07-26 12:09:46 - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@2ec1161b
+2024-07-26 12:09:46 - HikariPool-2 - Start completed.
+2024-07-26 12:09:46 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-26 12:09:47 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-26 12:09:47 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26 12:09:47 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-26 12:09:47 - 
+
+Using generated security password: fde3f3b7-afba-4faf-b5ba-5c4c88d71299
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-07-26 12:09:47 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-07-26 12:09:47 - LiveReload server is running on port 35729
+2024-07-26 12:09:47 - Starting ProtocolHandler ["http-nio-8082"]
+2024-07-26 12:09:47 - Tomcat started on port 8082 (http) with context path '/'
+2024-07-26 12:09:47 - Started DepartmentServiceApplication in 2.397 seconds (process running for 148.83)
+2024-07-26 12:09:47 - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration matched:
+      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+      - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   UserDetailsServiceAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+      - AnyNestedCondition 1 matched 2 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'password'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'name'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)
+      - @ConditionalOnBean (types: org.springframework.security.config.annotation.ObjectPostProcessor; SearchStrategy: all) found bean 'objectPostProcessor'; @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2024-07-26 12:09:52 - Restarting due to 22 class path changes (22 additions, 0 deletions, 0 modifications)
+2024-07-26 12:09:52 - Stopping ProtocolHandler ["http-nio-8082"]
+2024-07-26 12:09:53 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26 12:09:53 - HikariPool-2 - Shutdown initiated...
+2024-07-26 12:09:53 - HikariPool-2 - Shutdown completed.
+2024-07-26 12:09:53 - Starting DepartmentServiceApplication using Java 18.0.2.1 with PID 9904 (C:\Users\l.ciaravola\Desktop\department-service\target\classes started by l.ciaravola in C:\Users\l.ciaravola\Desktop\department-service)
+2024-07-26 12:09:53 - No active profile set, falling back to 1 default profile: "default"
+2024-07-26 12:09:53 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-26 12:09:53 - Finished Spring Data repository scanning in 23 ms. Found 1 JPA repository interface.
+2024-07-26 12:09:53 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-26 12:09:53 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-07-26 12:09:54 - Tomcat initialized with port 8082 (http)
+2024-07-26 12:09:54 - Initializing ProtocolHandler ["http-nio-8082"]
+2024-07-26 12:09:54 - Starting service [Tomcat]
+2024-07-26 12:09:54 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-26 12:09:54 - Initializing Spring embedded WebApplicationContext
+2024-07-26 12:09:54 - Root WebApplicationContext: initialization completed in 1005 ms
+2024-07-26 12:09:54 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-26 12:09:54 - HHH000026: Second-level cache disabled
+2024-07-26 12:09:54 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-26 12:09:54 - HikariPool-3 - Starting...
+2024-07-26 12:09:54 - HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@293a7c29
+2024-07-26 12:09:54 - HikariPool-3 - Start completed.
+2024-07-26 12:09:54 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-26 12:09:54 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-26 12:09:54 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26 12:09:54 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-26 12:09:55 - LiveReload server is running on port 35729
+2024-07-26 12:09:55 - Starting ProtocolHandler ["http-nio-8082"]
+2024-07-26 12:09:55 - Tomcat started on port 8082 (http) with context path '/'
+2024-07-26 12:09:55 - Started DepartmentServiceApplication in 2.373 seconds (process running for 156.495)
+2024-07-26 12:09:55 - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration:
+      Did not match:
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' securityFilterChain; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) found beans named springSecurityFilterChain (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+
+   UserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) found beans of type 'org.springframework.security.authentication.AuthenticationManager' authenticationManager (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+         - AnyNestedCondition 1 matched 2 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'password'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'name'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2024-07-26 12:10:18 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26 12:10:18 - HikariPool-3 - Shutdown initiated...
+2024-07-26 12:10:18 - HikariPool-3 - Shutdown completed.
+2024-07-26 12:10:24 - HV000001: Hibernate Validator 8.0.1.Final
+2024-07-26 12:10:24 - Starting DepartmentServiceApplication using Java 18.0.2.1 with PID 13220 (C:\Users\l.ciaravola\Desktop\department-service\target\classes started by l.ciaravola in C:\Users\l.ciaravola\Desktop\department-service)
+2024-07-26 12:10:24 - No active profile set, falling back to 1 default profile: "default"
+2024-07-26 12:10:24 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-26 12:10:24 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-26 12:10:27 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-26 12:10:27 - Finished Spring Data repository scanning in 139 ms. Found 1 JPA repository interface.
+2024-07-26 12:10:28 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-26 12:10:28 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-07-26 12:10:29 - Tomcat initialized with port 8082 (http)
+2024-07-26 12:10:29 - Initializing ProtocolHandler ["http-nio-8082"]
+2024-07-26 12:10:29 - Starting service [Tomcat]
+2024-07-26 12:10:29 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-26 12:10:29 - Initializing Spring embedded WebApplicationContext
+2024-07-26 12:10:29 - Root WebApplicationContext: initialization completed in 4930 ms
+2024-07-26 12:10:30 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-26 12:10:31 - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-26 12:10:31 - HHH000026: Second-level cache disabled
+2024-07-26 12:10:31 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-26 12:10:32 - HikariPool-1 - Starting...
+2024-07-26 12:10:32 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4d04c71a
+2024-07-26 12:10:32 - HikariPool-1 - Start completed.
+2024-07-26 12:10:32 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-26 12:10:34 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-26 12:10:34 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26 12:10:35 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-26 12:10:37 - LiveReload server is running on port 35729
+2024-07-26 12:10:37 - Starting ProtocolHandler ["http-nio-8082"]
+2024-07-26 12:10:37 - Tomcat started on port 8082 (http) with context path '/'
+2024-07-26 12:10:37 - Started DepartmentServiceApplication in 13.767 seconds (process running for 15.017)
+2024-07-26 12:16:34 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-26 12:16:34 - Initializing Servlet 'dispatcherServlet'
+2024-07-26 12:16:34 - Completed initialization in 3 ms
+2024-07-26 12:35:15 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26 12:35:15 - HikariPool-1 - Shutdown initiated...
+2024-07-26 12:35:15 - HikariPool-1 - Shutdown completed.
+2024-07-26 12:43:31 - HV000001: Hibernate Validator 8.0.1.Final
+2024-07-26 12:43:32 - Starting DepartmentServiceApplication using Java 18.0.2.1 with PID 7748 (C:\Users\l.ciaravola\Desktop\department-service\target\classes started by l.ciaravola in C:\Users\l.ciaravola\Desktop\department-service)
+2024-07-26 12:43:32 - No active profile set, falling back to 1 default profile: "default"
+2024-07-26 12:43:32 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-26 12:43:32 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-26 12:43:34 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-26 12:43:34 - Finished Spring Data repository scanning in 114 ms. Found 1 JPA repository interface.
+2024-07-26 12:43:35 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-26 12:43:35 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-07-26 12:43:36 - Tomcat initialized with port 8082 (http)
+2024-07-26 12:43:36 - Initializing ProtocolHandler ["http-nio-8082"]
+2024-07-26 12:43:36 - Starting service [Tomcat]
+2024-07-26 12:43:36 - Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-26 12:43:36 - Initializing Spring embedded WebApplicationContext
+2024-07-26 12:43:36 - Root WebApplicationContext: initialization completed in 4118 ms
+2024-07-26 12:43:37 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-26 12:43:37 - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-26 12:43:37 - HHH000026: Second-level cache disabled
+2024-07-26 12:43:38 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-26 12:43:38 - HikariPool-1 - Starting...
+2024-07-26 12:43:38 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@17e51c8f
+2024-07-26 12:43:38 - HikariPool-1 - Start completed.
+2024-07-26 12:43:38 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-26 12:43:40 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-26 12:43:41 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26 12:43:41 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-26 12:43:43 - LiveReload server is running on port 35729
+2024-07-26 12:43:43 - Starting ProtocolHandler ["http-nio-8082"]
+2024-07-26 12:43:43 - Tomcat started on port 8082 (http) with context path '/'
+2024-07-26 12:43:43 - Started DepartmentServiceApplication in 12.456 seconds (process running for 13.572)
+2024-07-26 12:44:02 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-26 12:44:02 - Initializing Servlet 'dispatcherServlet'
+2024-07-26 12:44:02 - Completed initialization in 3 ms
+2024-07-26 12:44:33 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26 12:44:33 - HikariPool-1 - Shutdown initiated...
+2024-07-26 12:44:33 - HikariPool-1 - Shutdown completed.
